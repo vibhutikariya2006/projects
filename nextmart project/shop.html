@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="main.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="font-family: Roboto, sans-serif;">
+
+    <!-- Navbar -->
+<div id="navbar"></div>
+
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("navbar").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "navbar.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+<div id="dot"></div>
+<script>
+fetch("dot.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("dot").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "dot.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+    <div class="max-w-7xl mx-auto p-4">
+
+        <!-- View Buttons -->
+        <div class="flex justify-end gap-3 mb-6">
+            <button
+                id="gridBtn"
+                class="px-4 py-2 bg-blue-600 text-white rounded"
+            >
+                <i class="ri-layout-grid-fill"></i>
+            </button>
+
+            <button
+                id="listBtn"
+                class="px-4 py-2 bg-gray-200 rounded"
+            >
+                <i class="ri-list-check-2"></i>
+            </button>
+        </div>
+
+        <!-- Products -->
+        <div
+            id="container"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+        ></div>
+
+    </div>
+
+    <!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("footer").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "footer.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+    <script src="shop.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+.slide{
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: 1s;
+      z-index: 0;
+    }
+
+    .slide.active{
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .content{
+      transform: translateY(80px);
+      opacity: 0;
+      transition: 1s;
+    }
+
+    .slide.active .content{
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .hero-img{
+      transform: translateX(150px) scale(.8);
+      opacity: 0;
+      transition: 1.2s;
+    }
+
+    .slide.active .hero-img{
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+
+ /* Dots */
+.dot{
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s;
+}
+
+/* Inner Gray Dot */
+.inner-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: gray;
+  transition: .4s;
+}
+
+/* Active Dot */
+.dot.active{
+  border-color: #2563eb;
+}
+
+/* Active Inner Dot */
+.dot.active .inner-dot{
+  background: #2563eb;
+}
+
+.slider-section{
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-section::before{
+  z-index: 10;
+}
+
+.slider-section::after{
+  z-index: 10;
+}
+
+.wave{
+  z-index: 10;
+}
+
+.content{
+  position: relative;
+  z-index: 20;
+}
+
+.hero-img{
+  position: relative;
+  z-index: 20;
+}
+
+/* Slide */
+.slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 1s;
+  z-index: 5;
+}
+
+.slide.active{
+  opacity: 1;
+  z-index: 6;
+}
+
+.slide.active .content{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide.active .hero-img{
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+/* Content */
+.content{
+   position: relative;
+  z-index: 20;
+}
+
+/* Button */
+.content button{
+  position: relative;
+  z-index: 30;
+}
+
+/* Floating Effect */
+@keyframes float{
+
+  0%{
+    transform: translateY(0px);
+  }
+
+  50%{
+    transform: translateY(-15px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+
+}
+
+.float-wrapper{
+  animation: float 4s ease-in-out infinite;
+}
+
+
+@keyframes float{
+
+  0%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-20px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+
+}
+
+

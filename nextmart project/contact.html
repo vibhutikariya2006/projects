@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+     <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Remix Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+        <!-- Fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50" style="font-family: Roboto, sans-serif;">
+    <div id="navbar"></div>
+
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("navbar").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "navbar.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+    <!-- Contact Info -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-4xl font-bold text-center mb-12">Contact Information</h2>
+
+      <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+        <!-- Card -->
+        <div
+          class="group bg-white rounded-xl shadow-sm p-6 flex gap-4 items-center transition-all duration-300 hover:shadow-lg"
+        >
+          <div
+            class="relative w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden"
+          >
+            <span
+              class="absolute inset-0 bg-yellow-500 rounded-full origin-top scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100"
+            >
+            </span>
+
+            <i
+              class="ri-map-pin-line relative z-10 text-3xl text-blue-600 transition-colors duration-300 group-hover:text-white"
+            >
+            </i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl mb-2">Corporate Office</h3>
+            <p class="text-gray-600 text-sm">
+              0233 Brisbane Cir. Shiloh,<br />
+              Australia 81063
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white rounded-xl shadow-sm p-6 flex gap-4 items-center transition-all duration-300 hover:shadow-lg"
+        >
+          <div
+            class="relative w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden"
+          >
+            <span
+              class="absolute inset-0 bg-yellow-500 rounded-full origin-top scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100"
+            >
+            </span>
+
+            <i
+              class="ri-map-pin-line relative z-10 text-3xl text-blue-600 transition-colors duration-300 group-hover:text-white"
+            >
+            </i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl mb-2">Main Warehouse</h3>
+            <p class="text-gray-600 text-sm">
+              0233 Brisbane Cir. Shiloh,<br />
+              Australia 81063
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white rounded-xl shadow-sm p-6 flex gap-4 items-center transition-all duration-300 hover:shadow-lg"
+        >
+          <div
+            class="relative w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden"
+          >
+            <span
+              class="absolute inset-0 bg-yellow-500 rounded-full origin-top scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100"
+            >
+            </span>
+
+            <i
+              class="ri-map-pin-line relative z-10 text-3xl text-blue-600 transition-colors duration-300 group-hover:text-white"
+            >
+            </i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl mb-2">Email Address</h3>
+            <p class="text-gray-600 text-sm">
+              contact@example.com<br />
+              support@example.com
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white rounded-xl shadow-sm p-6 flex gap-4 items-center transition-all duration-300 hover:shadow-lg"
+        >
+          <div
+            class="relative w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden"
+          >
+            <span
+              class="absolute inset-0 bg-yellow-500 rounded-full origin-top scale-y-0 transition-transform duration-500 ease-in-out group-hover:scale-y-100"
+            >
+            </span>
+
+            <i
+              class="ri-map-pin-line relative z-10 text-3xl text-blue-600 transition-colors duration-300 group-hover:text-white"
+            >
+            </i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-xl mb-2">Phone Number</h3>
+            <p class="text-gray-600 text-sm">
+              Emergency Cases<br />
+              +(208) 544-0142
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form + Map -->
+    <section class="max-w-7xl mx-auto px-4 pb-16">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="grid lg:grid-cols-2">
+          <!-- Form -->
+          <div class="p-8">
+            <form id="contactForm" class="space-y-5">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block mb-2 font-medium">Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    required
+                    class="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  <p id="nameError" class="hidden text-red-500 text-sm mt-1">
+                    Name is required
+                  </p>
+                </div>
+
+                <div>
+                  <label class="block mb-2 font-medium">E-mail</label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    class="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  <p id="emailError" class="hidden text-red-500 text-sm mt-1">
+                    Email is required
+                  </p>
+                </div>
+
+                <div>
+                  <label class="block mb-2 font-medium">Phone</label>
+                  <input
+                    id="phone"
+                    type="number"
+                    required
+                    class="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <p id="phoneError" class="hidden text-red-500 text-sm mt-1">
+                    Phone is required
+                  </p>
+                </div>
+
+                <div>
+                  <label class="block mb-2 font-medium">Subject</label>
+                  <input
+                    id="subject"
+                    type="text"
+                    required
+                    class="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  <p id="subjectError" class="hidden text-red-500 text-sm mt-1">
+                    Subject is required
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <label class="block mb-2 font-medium"> Write Message * </label>
+
+                <textarea
+                  id="message"
+                  rows="6"
+                  required
+                  class="w-full border rounded-xl px-4 py-3 outline-none resize-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+
+                <p id="messageError" class="hidden text-red-500 text-sm mt-1">
+                  Message is required
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Map -->
+          <div class="h-[500px]">
+            <iframe
+              class="w-full h-full"
+              src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const form = document.getElementById("contactForm");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        alert("Message Sent Successfully!");
+        form.reset();
+      });
+    </script>
+
+    <!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("footer").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "footer.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+  </body>
+</html>

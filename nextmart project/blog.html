@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News</title>
+ <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Remix Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+        <!-- Fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100" style="font-family: Roboto, sans-serif;">
+
+    <!-- Navbar -->
+<div id="navbar"></div>
+
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("navbar").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "navbar.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+    <section class="w-full py-10 px-4 md:px-8 lg:px-12">
+
+        <!-- TITLE -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-8">
+
+            <h2 class="text-2xl md:text-3xl font-bold">
+                Latest News
+            </h2>
+
+            <a href="#" class="font-semibold underline hover:text-blue-600 transition">
+                View All News
+            </a>
+
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+            <!-- NEWS LEFT SIDE -->
+            <div id="newsContainer" class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+
+            <!-- SIDEBAR RIGHT SIDE -->
+            <div class="lg:col-span-1 space-y-6">
+
+                <!-- SEARCH -->
+                <div class="bg-white p-4 rounded-xl shadow">
+                    <div class="flex items-center border rounded-full overflow-hidden">
+                        <input type="text" placeholder="Search News" class="w-full px-4 py-2 outline-none">
+                        <button class="bg-orange-400 px-4 py-2 text-white">
+                            <i class="ri-search-line"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CATEGORIES -->
+                <div class="bg-white p-5 rounded-xl shadow">
+                    <h3 class="text-xl font-bold mb-4">Categories</h3>
+
+                    <ul class="space-y-2 text-gray-700">
+
+                        <li class="flex items-center gap-2"><input type="checkbox"> Virtual</li>
+                        <li class="flex items-center gap-2"><input type="checkbox"> Mobile</li>
+                        <li class="flex items-center gap-2"><input type="checkbox"> Wireless</li>
+                        <li class="flex items-center gap-2"><input type="checkbox"> Technology</li>
+                        <li class="flex items-center gap-2"><input type="checkbox"> AI News</li>
+
+                    </ul>
+
+                    <!-- Latest News -->
+                    <div class=" pt-5">
+
+                        <h3 class="text-xl font-bold mb-4">Latest News</h3>
+
+                        <!-- Item 1 -->
+                        <div class="flex gap-3 items-start mb-4">
+                            <img src="./src/news-1.jpg" class="w-16 h-16 object-cover rounded-md">
+                            <div>
+                                <p class="text-sm font-semibold leading-tight">
+                                    Gooloo Battery Jumpers For Sale at Buy Auto
+                                </p>
+                                <span class="text-xs text-gray-500">Apr 17, 2022</span>
+                            </div>
+                        </div>
+
+                        <hr class="my-3">
+
+                        <!-- Item 2 -->
+                        <div class="flex gap-3 items-start mb-4">
+                            <img src="./src/news-2.jpg" class="w-16 h-16 object-cover rounded-md">
+                            <div>
+                                <p class="text-sm font-semibold leading-tight">
+                                    You can travel at your own pace in a car
+                                </p>
+                                <span class="text-xs text-gray-500">Apr 16, 2022</span>
+                            </div>
+                        </div>
+
+                        <hr class="my-3">
+
+                        <!-- Item 3 -->
+                        <div class="flex gap-3 items-start">
+                            <img src="./src/news-3.jpg" class="w-16 h-16 object-cover rounded-md">
+                            <div>
+                                <p class="text-sm font-semibold leading-tight">
+                                    Reports Highest Third Quarter Sales
+                                </p>
+                                <span class="text-xs text-gray-500">Apr 15, 2022</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Promo Banner -->
+                    <div class="  overflow-hidden pt-3">
+
+                        <img src="./src/sidebar-1.jpg" class="w-full h-[350px] object-cover">
+
+                        <div
+                            class=" inset-0 flex flex-col items-center justify-center text-center bg-black/40 text-white">
+
+                        </div>
+
+                    </div>
+
+                    <div class="lg:col-span-1 space-y-6">
+
+
+  <!-- ARCHIVES -->
+  <div class=" p-5  ">
+    <h3 class="text-xl font-bold mb-4">Archives</h3>
+
+    <ul class="space-y-2 text-gray-700 text-sm">
+      <li>February 20, 2023</li>
+      <li>March 20, 2023</li>
+      <li>April 20, 2023</li>
+      <li>July 20, 2023</li>
+      <li>August 20, 2023</li>
+    </ul>
+  </div>
+
+  <!-- PHOTO GALLERY -->
+  <div class=" p-5 rounded-xl">
+    <h3 class="text-xl font-bold mb-4">Photo Gallery</h3>
+
+    <div class="grid grid-cols-2 gap-2">
+      <img src="./src/news-35.jpg" class="w-full h-20 object-cover rounded">
+      <img src="./src/news-36.jpg" class="w-full h-20 object-cover rounded">
+      <img src="./src/news-37.jpg" class="w-full h-20 object-cover rounded">
+      <img src="./src/news-38.jpg" class="w-full h-20 object-cover rounded">
+    </div>
+
+  </div>
+
+</div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("footer").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "footer.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+    <script src="blog.js"></script>
+</body>
+
+</html>

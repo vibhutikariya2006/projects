@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+ <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Remix Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+        <!-- Fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body style="font-family: Roboto, sans-serif;">
+<!-- Navbar -->
+<div id="navbar"></div>
+
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("navbar").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "navbar.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+  <!-- marquee tag section -->
+ <div class="section-1 w-full bg-white py-4 shadow-md overflow-hidden">
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    <div id="featuredContainer" class="featuredContainer flex items-center gap-10 px-5">
+    </div>
+  </marquee>
+</div>
+
+
+<!-- Dot Slider Section -->
+<div id="dot"></div>
+<script>
+fetch("dot.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("dot").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "dot.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+ <!-- Popular category section -->
+<section class="max-w-7xl mx-auto px-4 py-10">
+
+    <!-- Heading -->
+    <div class="flex flex-col items-center gap-3 mb-8 sm:flex-row sm:justify-between">
+        <h2 class="text-3xl font-bold">Popular Categories</h2>
+
+        <a href="category.html" class="underline font-semibold hover:text-blue-600">
+            View All Category
+        </a>
+    </div>
+
+    <!-- Slider -->
+    <div class="overflow-hidden">
+        <div id="slider1" class="flex gap-[10px] md:gap-[20px] transition-transform duration-700"></div>
+    </div>
+
+</section>
+
+  <!-- Section-3 -->
+  <section class="max-w-screen-2xl mx-auto py-10 px-4 sm:px-6 lg:px-12">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div
+        class="group bg-[#e9e3cf] rounded-lg overflow-hidden relative min-h-[260px] md:h-[280px] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+        <div class="absolute left-6 top-8 z-10">
+          <p class="text-xs font-semibold uppercase text-gray-700">
+            Featured
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold mt-2 text-[#4a4a12]">
+            Smart TVs
+          </h2>
+
+
+          <p class="text-base md:text-lg mt-3 text-[#4a4a12]"></p>
+          From <span class="font-bold">$99.99</span>
+          </p>
+
+          <a href="shop.html" class="absolute top-[170px] text-base font-bold underline hover:text-blue-600 transition">
+            Shop now
+          </a>
+        </div>
+
+        <img src="./src/shop-7.png" alt=""
+          class="absolute right-0 bottom-0 h-[90%] object-contain transition-all duration-700 ease-in-out group-hover:scale-110">
+
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="group bg-[#ececec] rounded-lg overflow-hidden relative min-h-[260px] md:h-[280px] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+        <div class="absolute left-6 top-8 z-10">
+          <p class="text-xs font-semibold uppercase text-gray-700">
+            Hot Sale
+          </p>
+
+          <h2 class="text-3xl font-bold mt-2 text-gray-800">
+            Kitchen Kits
+          </h2>
+
+          <p class="text-base md:text-lg mt-3 text-gray-800">
+            From <span class="font-bold">$50 Only</span>
+          </p>
+
+          <a href="shop.html" class="absolute top-[170px] text-base font-bold underline hover:text-blue-600 transition">
+            Shop now
+          </a>
+        </div>
+
+        <img src="./src/shop-8.png" alt=""
+          class="absolute right-0 bottom-0 h-[90%] object-contain transition-all duration-700 ease-in-out group-hover:scale-110">
+
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="group bg-[#f3dede] rounded-lg overflow-hidden relative min-h-[260px] md:h-[280px] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+        <div class="absolute left-6 top-8 z-10">
+          <p class="text-xs font-semibold uppercase text-[#8b2b2b]">
+            Latest Deals
+          </p>
+
+          <h2 class="text-3xl font-bold mt-2 text-[#8b2b2b]">
+            Smart Device
+          </h2>
+
+
+          <p class="text-base md:text-lg mt-3 text-[#8b2b2b]">
+            From <span class="font-bold">$499.99</span>
+          </p>
+
+          <a href="shop.html" class="absolute top-[170px] text-base font-bold underline hover:text-blue-600 transition">
+            Shop now
+          </a>
+        </div>
+
+        <img src="./src/shop-9.png" alt=""
+          class="absolute right-0 bottom-0 h-[90%] object-contain transition-all duration-700 ease-in-out group-hover:scale-110">
+
+      </div>
+
+    </div>
+
+  </section>
+
+<!-- Today’s popular picks section -->
+  <section class="popular-section max-w-7xl mx-auto px-4 py-10">
+
+    <!-- Heading -->
+    <div class="flex flex-col items-center gap-3 mb-8 sm:flex-row sm:justify-between">
+
+        <h2 class=" text-[20px] sm:text-[30px] md:text-[30px] font-bold">
+            Today's Popular Picks
+        </h2>
+
+        <div class="hidden sm:block">
+            <button class="prev-btn w-[50px] h-[50px] border rounded-full text-[20px] bg-[#F7F7F7] hover:bg-black hover:text-white">
+                <i class="ri-arrow-left-long-line"></i>
+            </button>
+
+            <button class="next-btn w-[50px] h-[50px] border rounded-full text-[20px] bg-[#F7F7F7] hover:bg-black hover:text-white">
+                <i class="ri-arrow-right-long-line"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Slider -->
+    <div id="slider-image1" class="overflow-hidden">
+    <div id="slider-cards" class="flex gap-[10px] md:gap-[30px]"></div>
+</div>
+
+</section>
+
+<!-- Section-5 -->
+  <section class="w-full px-4 py-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+      <!-- Left Banner -->
+      <div
+        class="bg-[#dceedd] relative overflow-hidden min-h-[420px] md:min-h-[550px] flex flex-col items-center text-center pt-10 rounded">
+
+        <p class="uppercase font-semibold text-gray-700">
+          Music
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-bold text-[#3f4a21] mt-3 leading-tight">
+          Bluetooth <br> Speaker
+        </h2>
+
+        <p class="text-2xl mt-4 text-[#3f4a21]">
+          Starting From <span class="font-bold">$99.99</span>
+        </p>
+
+        <a href="#" class="mt-6 underline font-semibold">
+          Shop now
+        </a>
+
+        <div class="mt-auto float-wrapper">
+          <img src="./src/shop-16.png" alt="" class="w-[180px] mx-auto">
+        </div>
+
+      </div>
+
+
+      <!-- Middle Products -->
+      <div class="space-y-8">
+
+        <!-- Product 1 -->
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-17.png" alt="" class="w-24 h-24 border p-2 object-contain">
+
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              Wireless Bluetooth Headphone Stereo
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $83.99
+            </p>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-18.png" alt="" class="w-24 h-24 border p-2 object-contain">
+
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              64 GB Camera CCTV Memory Card
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $12.99
+            </p>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-19.png" alt="" class="w-24 h-24 border p-2 object-contain">
+
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              Voice Calling Smartwatch
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $39.99
+            </p>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-20.png" alt="" class="w-24 h-24 border p-2 object-contain">
+
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              Apple TV HD 32GB
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $499.99
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Banner -->
+      <div
+        class="bg-[#e1e7f6] relative overflow-hidden min-h-[420px] md:min-h-[550px] flex flex-col items-center text-center pt-10 rounded">
+
+        <p class="uppercase font-semibold text-blue-800">
+          Laptop
+        </p>
+
+        <h2 class="text-3xl md:text-5xl font-bold text-blue-900 mt-3 leading-tight">
+          Windows <br> Laptop
+        </h2>
+
+        <p class="text-2xl mt-4 text-blue-900">
+          Starting From <span class="font-bold">$999.99</span>
+        </p>
+
+        <a href="#" class="mt-6 underline font-semibold text-blue-900">
+          Shop now
+        </a>
+
+        <div class="mt-auto float-wrapper">
+          <img src="./src/shop-2.png" alt="" class="w-[280px]">
+        </div>
+
+      </div>
+
+      <!-- Right Products -->
+      <div class="space-y-8">
+
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-21.png" class="w-20 h-20 md:w-24 md:h-24 border p-2 object-contain flex-shrink-0">
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              Xiaomi Mi 4S 55 Inches 4K UHD Smart Television
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $249.99
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-22.png" class="w-20 h-20 md:w-24 md:h-24 border p-2 object-contain flex-shrink-0">
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              1.2V Rechargeable Battery 4300mAh
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $16.99
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-23.png" class="w-20 h-20 md:w-24 md:h-24 border p-2 object-contain flex-shrink-0">
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              AV Log Beginner 14" Convertible Laptop
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $789.99
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start">
+          <img src="./src/shop-24.png" class="w-20 h-20 md:w-24 md:h-24 border p-2 object-contain">
+          <div>
+            <h3 class="text-base md:text-xl font-bold leading-tight">
+              Vintage Sony AVC-1420 Video Camera
+            </h3>
+
+            <p class="text-red-500 text-lg md:text-2xl font-bold mt-2">
+              $199.99
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Brands Section -->
+  <section class="w-full py-10 px-4 md:px-8 lg:px-12">
+
+    <!-- Heading -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-3">
+
+      <h2 class="text-2xl md:text-3xl font-bold">
+        Shop by Brands
+      </h2>
+
+      <a href="#" class="font-semibold underline hover:text-blue-600 transition">
+        View All Brands
+      </a>
+
+    </div>
+
+    <!-- Brands Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 border border-gray-200">
+
+      <!-- Brand 1 -->
+      <div
+        class="group h-28 border-r border-b border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-1.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 2 -->
+      <div
+        class="group h-28 border-r border-b border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-2.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 3 -->
+      <div
+        class="group h-28 border-r border-b border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-3.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 4 -->
+      <div
+        class="group h-28 border-r border-b border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-4.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 5 -->
+      <div
+        class="group h-28 border-r border-b border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-5.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 6 -->
+      <div
+        class="group h-28 border-b border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-6.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 7 -->
+      <div
+        class="group h-28 border-r border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-7.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 8 -->
+      <div
+        class="group h-28 border-r border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-8.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 9 -->
+      <div
+        class="group h-28 border-r border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-9.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 10 -->
+      <div
+        class="group h-28 border-r border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-10.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 11 -->
+      <div
+        class="group h-28 border-r border-gray-200 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-11.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+      <!-- Brand 12 -->
+      <div
+        class="group h-28 flex items-center justify-center bg-white transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+        <img src="./src/clients-12.png" alt="" class="h-12 md:h-14 object-contain">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Today’s popular picks section-2 -->
+  <section class="popular-section max-w-7xl mx-auto px-4 py-10">
+
+  <!-- Heading -->
+  <div class="flex justify-between items-center mb-8">
+    <h2 class="text-3xl md:text-[30px] font-bold">
+      Today's Popular Picks
+    </h2>
+
+    <div id="subheading" class="subheading hidden sm:block"></div>
+  </div>
+
+  <!-- Slider -->
+  <div class="overflow-hidden">
+
+    <div
+      id="slider-cards1"
+      class="flex gap-[30px] transition-transform duration-700 ease-in-out"
+    >
+    </div>
+
+  </div>
+
+</section>
+
+<section class="w-full py-6 md:py-10">
+
+  <div class="group relative w-full overflow-hidden">
+
+    <!-- Background Image -->
+    <img
+      src="./src/cta-bg.jpg"
+      alt=""
+      class="w-full h-[280px] sm:h-[350px] md:h-[450px] lg:h-[550px] object-cover transition-all duration-700 group-hover:scale-110"
+    >
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Content -->
+    <div class="absolute inset-0 flex items-center">
+
+      <div class="px-5 sm:px-10 md:px-16 lg:px-24 max-w-4xl">
+
+        <span class="inline-block bg-yellow-400 text-black text-xs md:text-sm font-bold px-4 py-2 rounded-full">
+          TRENDING
+        </span>
+
+        <h1 class="mt-4 md:mt-6 text-white font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
+          Get the Virtual Experience
+        </h1>
+
+        <p class="mt-4 md:mt-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl">
+          Starting From
+          <span class="font-bold">$83.99</span>
+        </p>
+
+        <a
+          href="shop.html"
+          class="inline-block mt-6 md:mt-10 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 sm:px-8 md:px-12 py-3 md:py-4 rounded-full transition-all duration-300"
+        >
+          Shop Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="w-full py-10 px-4 md:px-8 lg:px-12">
+
+  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-8">
+
+    <h2 class="text-2xl md:text-3xl font-bold">
+      Latest News
+    </h2>
+
+    <a href="#" class="font-semibold underline hover:text-blue-600 transition">
+      View All News
+    </a>
+
+  </div>
+
+  <div
+    id="newsContainer"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+  >
+  </div>
+
+</section>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+
+    // HTML insert
+    document.getElementById("footer").innerHTML = data;
+
+    // JS load
+    const script = document.createElement("script");
+    script.src = "footer.js";
+
+    script.onload = () => {
+      console.log("Navbar JS Loaded");
+    };
+
+    document.body.appendChild(script);
+
+  })
+  .catch(err => console.log(err));
+</script>
+
+  <script src="final.js"></script>
+
+</body>
+
+</html>
