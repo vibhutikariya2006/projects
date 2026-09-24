@@ -44,7 +44,7 @@ const navLinks = [
       "Watch",
       "Pet"
     ],
-    links: "final.html"
+    links: "index.html"
   },
 
   {
